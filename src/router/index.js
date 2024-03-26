@@ -1,16 +1,16 @@
 import { createWebHistory, createRouter } from "vue-router";
-import ContactBook from "@/views/ContactBook.vue";
+// import ContactBook from "@/views/ContactBook";
 
 const routes = [
     {
         path: "/",
         name: "contactbook",
-        component: ContactBook,
+        component: () => import("@/views/ContactBook.vue")
     },
     {
         path: "/:pathMatch(.*)*",
         name: "notfound",
-        component: () => import("@/views/NotFound.vue"),
+        component: () => import("@/views/NotFound.vue")
     },
 ];
 
